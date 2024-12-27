@@ -7,18 +7,18 @@ using std::cout, std::endl;
 
 int main() {
 
-    Pirate luffy("Luffy");
-    Pirate zoro("Zoro");
+    Pirate luffy("Luffy", 1000000);
+    Pirate zoro("Zoro", 500000);
 
     const int crewSize = 2;
     
-    Pirate strawHatCrew[2];
+    Pirate *strawHatCrew = new Pirate[2];
     strawHatCrew[0] = luffy;
     strawHatCrew[1] = zoro;
     
     cout << "Straw Hat crew contains:" << endl;
     for (int i = 0; i < crewSize; i++) {
-        cout << strawHatCrew[i] << endl;
+        strawHatCrew[i].printDetails();
     }
 
     return 0;
